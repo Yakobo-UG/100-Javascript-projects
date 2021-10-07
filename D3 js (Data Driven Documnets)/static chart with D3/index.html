@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <title>D3</title>
+
+</head>
+<body>
+    <h1>Top Smart phones</h1>
+    <ul class = "items">
+        <li>Telego</li>
+        <li>Itel</li>
+        <li>Infinix</li>
+        <li>Motorola</li>
+        <li>Samsung</li>
+    </ul>
+    <script>
+        var styles = [
+            {
+                "background": "red",
+                "color": "pink",
+                "width": "35%"
+            },
+            {
+                "background": "yellow",
+                "color": "blue",
+                "width": "25%"
+            },
+            {
+                "background": "blue",
+                "color": "orange",
+                "width": "20%"
+            },
+            {
+                "background": "purple",
+                "color": "green",
+                "width": "12%"
+            },
+            {
+                "background": "red",
+                "color": "black",
+                "width": "8%"
+            }
+        ];
+
+        d3.selectAll(".items li")
+            .data(styles)
+            .style({
+                "font-size": "18px",
+                "padding": "6px",
+                "margin": "4px",
+                "list-style": "none",
+                "background": function(d){
+                    return d.background;
+
+                },
+                "color": function(d){
+                    return d.color;
+
+                },
+                "width": function(d){
+                    return d.width;
+
+                }
+
+                
+            });
+
+    </script>
+    
+</body>
+</html>
