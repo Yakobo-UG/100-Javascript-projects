@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <title>D3</title>
+</head>
+<body>
+    <ul class=" Items">
+
+        <li>This is D3</li>
+        <li>This is D3</li>
+        <li>This is D3</li>
+        <li>This is D3</li>
+        <li>This is D3</li>
+
+    </ul>
+
+    <script>
+
+        var list = [23,30,36,22,4, 34,77,56, 50, 90, 100];
+        /*
+        changing the the text in the li
+
+        d3.selectAll(".Items li")
+            .data(list)
+            .text(function(d){
+                return "This is the number" + d;
+        })
+        
+        changing the style (size ) in the li
+
+        d3.selectAll(".Items li")
+            .data(list)
+            .style("font-size", function(d){
+                return d + "px"; 
+            })
+            */
+
+        var  li = d3.selectAll(".Items li")
+            .data(list)
+            .text(function(d){
+                return "This is the new" + d;
+            });
+        li.enter().append("li")
+            .text(function(d){
+                return "this is the new " + d
+            });
+        li.exit().remove();
+
+    </script>
+    
+</body>
+</html>
